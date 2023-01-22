@@ -14,8 +14,8 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: '';
-$fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
+$fontFamily: 'Manrope';
+$fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
 $mainColor: #000; // Цвет шрифта по умолчанию
@@ -140,25 +140,31 @@ body {
 
 // TODO ++RealEstate ========================================================================================
 body {
-  font-family: Manrope;
   line-height: 1;
   color: #333333;
 }
 
-// TODO main-block
 .page {
   // .page__main
   &__main {
   }
 }
 
+.page {
+  // .page__how
+  &__how {
+  }
+}
+
+// TODO main-block
 .main-block {
-  padding-bottom: rem(110);
+  @include adaptiveValue('padding-bottom', 110, 30, 1);
 
   // .main-block__container
   &__container {
     position: relative;
     padding-top: rem(183);
+    @include adaptiveValue('padding-top', 183, 40, 1);
 
     &::after {
       content: '';
@@ -169,11 +175,6 @@ body {
       background-color: #bdccff;
       top: 0;
       left: 68%;
-    }
-
-    @media (max-width: $pc1200) {
-      padding-top: rem(100);
-      padding-bottom: rem(30);
     }
   }
 
@@ -366,11 +367,6 @@ body {
   }
 }
 
-.swiper-button-prev {
-}
-.swiper-button-next {
-}
-
 .partners-main-block {
   max-width: 65%;
 
@@ -404,6 +400,123 @@ body {
   &__item {
     img {
       max-width: 100%;
+    }
+  }
+}
+
+// TODO how ========================================================================================
+.how {
+  padding-top: rem(110);
+  @include adaptiveValue('padding-top', 110, 30, 1);
+  @include adaptiveValue('padding-bottom', 110, 30, 1);
+
+  // .how__container
+  &__container {
+  }
+
+  // .how__title
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 70, 40, 1);
+    }
+  }
+
+  // .how__items
+  &__items {
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: $mobile) {
+      row-gap: rem(15);
+      flex-direction: column;
+    }
+  }
+
+  // .how__item
+  &__item {
+    width: 100%;
+  }
+}
+
+.item-how {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+
+  &_1,
+  &_2 {
+    .item-how__icon {
+      background-color: #9672ff;
+      box-shadow: 0px 100px 80px rgba(150, 114, 255, 0.07),
+        0px 64.8148px 46.8519px rgba(150, 114, 255, 0.0531481),
+        0px 38.5185px 25.4815px rgba(150, 114, 255, 0.0425185),
+        0px 20px 13px rgba(150, 114, 255, 0.035),
+        0px 8.14815px 6.51852px rgba(150, 114, 255, 0.0274815),
+        0px 1.85185px 3.14815px rgba(150, 114, 255, 0.0168519);
+    }
+  }
+
+  // .item-how_2
+  &_2 {
+    .item-how__icon {
+      background-color: #4ddffd;
+      box-shadow: 0px 100px 80px rgba(77, 223, 253, 0.07),
+        0px 64.8148px 46.8519px rgba(77, 223, 253, 0.0531481),
+        0px 38.5185px 25.4815px rgba(77, 223, 253, 0.0425185),
+        0px 20px 13px rgba(77, 223, 253, 0.035),
+        0px 8.14815px 6.51852px rgba(77, 223, 253, 0.0274815),
+        0px 1.85185px 3.14815px rgba(77, 223, 253, 0.0168519);
+    }
+  }
+
+  // .item-how_3
+  &_3 {
+    .item-how__icon {
+      background-color: #f2b8ec;
+      box-shadow: 0px 100px 80px rgba(242, 184, 236, 0.07),
+        0px 64.8148px 46.8519px rgba(242, 184, 236, 0.0531481),
+        0px 38.5185px 25.4815px rgba(242, 184, 236, 0.0425185),
+        0px 20px 13px rgba(242, 184, 236, 0.035),
+        0px 8.14815px 6.51852px rgba(242, 184, 236, 0.0274815),
+        0px 1.85185px 3.14815px rgba(242, 184, 236, 0.0168519);
+    }
+  }
+
+  // .item-how__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(90);
+    height: rem(90);
+    border-radius: rem(20);
+    @include adaptiveValue('margin-bottom', 50, 15, 1);
+  }
+
+  // .item-how__title
+  &__title {
+    font-size: rem(22);
+    line-height: em(30, 22);
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: rem(15);
+  }
+
+  // .item-how__text
+  &__text {
+    line-height: em(26, 16);
+  }
+
+  // .item-how__decor
+  &__decor {
+    img {
+      @include adaptiveValue('width', 210, 80, 1);
+      padding-top: 45px;
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
     }
   }
 }
