@@ -138,10 +138,274 @@ body {
 // Подключение стилей отдельных страниц
 @import 'home';
 
-// TODO ++Project name ========================================================================================
+// TODO ++RealEstate ========================================================================================
 body {
   font-family: Manrope;
   line-height: 1;
   color: #333333;
 }
-// TODO --Project name ========================================================================================
+
+// TODO main-block
+.page {
+  // .page__main
+  &__main {
+  }
+}
+
+.main-block {
+  padding-bottom: rem(110);
+
+  // .main-block__container
+  &__container {
+    position: relative;
+    padding-top: rem(183);
+
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      background-color: #bdccff;
+      top: 0;
+      left: 68%;
+    }
+
+    @media (max-width: $pc1200) {
+      padding-top: rem(100);
+      padding-bottom: rem(30);
+    }
+  }
+
+  // .main-block__body
+  &__body {
+    margin-bottom: rem(14);
+
+    @media (max-width: $pc1200) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  // .main-block__partners
+  &__partners {
+  }
+}
+
+.body-main-block {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+
+  @media (max-width: $pc1200) {
+    display: block;
+  }
+
+  // .body-main-block__content
+  &__content {
+    flex: 0 1 50%;
+
+    @media (max-width: $pc1200) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  // .body-main-block__slider
+  &__slider {
+    flex: 0 1 50%;
+  }
+
+  // .body-main-block__arrows
+  &__arrows {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+    right: 0;
+    bottom: rem(-52);
+  }
+
+  // .body-main-block__arrow
+  &__arrow {
+    &.swiper-button-prev,
+    &.swiper-button-next {
+      position: static;
+      width: rem(11);
+      height: rem(20);
+      background: url('../img/icons/arrow.svg') 0 0 / 100% no-repeat;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &.swiper-button-prev {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.content-main-block {
+  padding-top: rem(40);
+
+  // .content-main-block__body
+  &__body {
+    padding-right: rem(80);
+
+    @media (max-width: $pc1200) {
+      padding-right: 0;
+    }
+  }
+
+  // .content-main-block__subtitle
+  &__subtitle {
+    font-size: rem(22);
+    line-height: em(29, 22);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ff9900;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  // .content-main-block__title
+  &__title {
+    @include adaptiveValue('font-size', 54, 30, 1);
+    line-height: em(73, 54);
+    font-weight: 800;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  // .content-main-block__text
+  &__text {
+    font-size: rem(17);
+    line-height: em(23, 17);
+    letter-spacing: 0.01em;
+    margin-bottom: rem(45);
+  }
+
+  // .content-main-block__form
+  &__form {
+  }
+}
+
+.form-main-block {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  background: #ffffff url(../img/main/home.svg) rem(33) rem(32) no-repeat;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03),
+    0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778),
+    0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222),
+    0px 20px 13px rgba(0, 0, 0, 0.015),
+    0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778),
+    0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222);
+  margin-right: rem(-188);
+
+  @media (max-width: $pc1200) {
+    margin-right: 0;
+  }
+
+  @media (max-width: $mobile) {
+    display: block;
+  }
+
+  // .form-main-block__input
+  &__input {
+    @include adaptiveValue('font-size', 20, 14, 1);
+    width: 100%;
+    height: rem(86);
+    background-color: transparent;
+    border: rem(1) solid #dadada;
+    flex: 1 1 auto;
+    padding-left: rem(74);
+    padding-right: rem(15);
+
+    &::placeholder {
+      color: rgba(49, 53, 59, 0.3);
+    }
+  }
+
+  // .form-main-block__button
+  &__button {
+    font-family: Manrope;
+    font-size: rem(17);
+    line-height: em(23, 17);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    width: rem(188);
+    height: rem(86);
+    flex: 0 0 rem(188);
+    color: #ffffff;
+    background-color: #f85a47;
+    padding: rem(5) rem(15);
+    cursor: pointer;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+}
+
+.slider-main-block {
+  // .slider-main-block__wrapper
+  &__wrapper {
+  }
+
+  // .slider-main-block__slide
+  &__slide {
+    padding-bottom: 95%;
+  }
+
+  // .slider-main-block__arrow
+  &__arrow {
+  }
+}
+
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
+
+.partners-main-block {
+  max-width: 65%;
+
+  @media (max-width: $pc1200) {
+    max-width: none;
+  }
+
+  // .partners-main-block__label
+  &__label {
+    font-size: rem(17);
+
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  // .partners-main-block__items
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(25);
+
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
+  }
+
+  // .partners-main-block__item
+  &__item {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+// TODO --RealEstate ========================================================================================
