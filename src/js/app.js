@@ -46,7 +46,7 @@ flsFunctions.menuInit();
 Документация: https://template.fls.guru/template-docs/modul-taby.html
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
@@ -86,7 +86,7 @@ flsForms.formFieldsInit({ viewPass: false });
 // flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
-// flsForms.formRating();
+flsForms.formRating();
 
 /* Модуль работы с select. */
 // import './libs/select.js'
@@ -157,11 +157,11 @@ import * as flsScroll from './files/scroll/scroll.js';
 
 // Плавная навигация по странице
 // Документация: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру при прокрутке
 // Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
-// flsScroll.headerScroll();
+flsScroll.headerScroll();
 
 // Функционал липкого блока
 // flsScroll.stickyBlock();
